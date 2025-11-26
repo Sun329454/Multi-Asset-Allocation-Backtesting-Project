@@ -1,4 +1,4 @@
-# Multi-Asset-Portfolio-Optimizer
+# Multi-Asset Portfolio Optimizer
 
 ## Project Overview
 
