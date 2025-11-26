@@ -1,4 +1,4 @@
-# Multi-Asset Allocation Backtsting Project
+# Multi-Asset Allocation Project
 
 ## Project Overview
 
