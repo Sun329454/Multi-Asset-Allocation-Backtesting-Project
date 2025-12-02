@@ -57,9 +57,8 @@
 ## Future Extensions 
 
 - Black-Litterman model for incorporating market views
-- Robust optimization under parameter uncertainty
 - Transaction cost modeling
-- Interactive dashboard using Streamlit
+- More asset datasets...
 
 ---
 
