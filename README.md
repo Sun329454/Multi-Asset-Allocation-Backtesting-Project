@@ -4,6 +4,8 @@
 
 - Updates: Integrate Market neutral strategy and Black-Litterman model
 
+---
+
 ## Project Overview
 
 - This project implements a multi-asset portfolio optimization model in Python using historical financial data.
