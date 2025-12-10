@@ -1,67 +1,71 @@
 # Multi-Asset Portfolio Optimizer
 
-# (Undergoing large-scale maintenance!!!)
+The **multi-asset-portfolio-optimizer** repository provides a collection of notebooks for portfolio optimization using different strategies, including traditional and advanced methods. It contains both a **Mean-Variance Portfolio (MVP)** version and an **Upgraded version** with advanced optimization techniques. This repository helps in optimizing multi-asset portfolios, evaluating various strategies, and backtesting the models.
 
-- Updates: Integrate Market neutral strategy and Black-Litterman model
+## Directory Structure
+```
+multi-asset-portfolio-optimizer/
+│
+├── README.md
+│
+├── notebooks (Upgrade for more optimizers)/
+│ ├── data/
+│ │ └── spy_prices.csv
+│ ├── Advanced_Mean_Variance_Optimisation.ipynb
+│ ├── Black_Litterman_Model.ipynb
+│ ├── Hierarchical_Risk_Parity.ipynb
+│ └── Risk_Return_Model.ipynb
+│
+└── notebooks (for only MVP)/
+├── data/
+│ ├── multiasset_benchmark.csv
+│ ├── multiasset_closing_prices.csv
+│ ├── multiasset_cum_returns.csv
+│ ├── multiasset_daily_returns.csv
+│ └── multiasset_ewc.csv
+├── reports/
+│ └── README.md
+├── Backtesting.ipynb
+├── DataAcquisition_&_Preprocessing.ipynb
+├── Extensions_Dashboard.ipynb
+├── Final_Model.ipynb
+└── Portfolio_Optimization.ipynb
+```
 
----
+## Repository Overview
 
-## Project Overview
+This repository is divided into two main sections based on the complexity and functionality:
 
-- This project implements a multi-asset portfolio optimization model in Python using historical financial data.
-- It builds an efficient, diversified portfolio by applying mean-variance optimization (**Markowitz Portfolio Theory**) under practical constraints and analyzes its performance through backtesting and risk metrics.
+### 1. **Mean-Variance Portfolio (MVP)**
 
----
+The MVP implementation follows Harry Markowitz's mean-variance optimization theory to construct an optimal portfolio based on the expected return and risk (variance). This section contains the following key components:
 
-## Objectives
+- **DataAcquisition_&_Preprocessing.ipynb**: A notebook for acquiring and preprocessing financial data.
+- **Portfolio_Optimization.ipynb**: The core notebook for applying the mean-variance optimization to build the portfolio.
+- **Final_Model.ipynb**: The final implementation of the MVP model.
+- **Backtesting.ipynb**: A notebook for backtesting the performance of the portfolio.
+- **Extensions_Dashboard.ipynb**: A notebook to extend the dashboard functionality for better visualization and analysis.
+- **data/**: Contains multiple CSV files for multi-asset data, including benchmark data, closing prices, cumulative returns, daily returns, and economic weightings (EWC).
+- **reports/**: Contains a `README.md` for reporting purposes related to MVP.
 
-- Download and clean historical data for a diversified set of ETFs and asset classes.
-- Calculate daily and monthly log returns, visualize trends, distributions, and correlations.
-- Optimize portfolio weights to minimize risk for a target return, with constraints:
-  - **Fully invested portfolio**
-  - **No short selling**
-  - **Max 20% allocation per asset**
-- Generate the efficient frontier to analyze risk-return trade-offs.
-- Backtest the optimized portfolio against:
-  - **An equal-weight portfolio**
-  - **An `SPY` benchmark (S&P 500)**
-- Calculate performance metrics:
-  - **Annualized Return**
-  - **Annualized Volatility**
-  - **Sharpe Ratio**
-  - **Maximum Drawdown**
-- Extend with **turnover constraints** to model practical rebalancing limits.
+### 2. **Upgraded Optimization Models**
 
----
+This section includes more sophisticated optimization techniques and models. The following notebooks provide advanced strategies for optimizing multi-asset portfolios:
 
-## Assets Used
+- **Advanced_Mean_Variance_Optimisation.ipynb**: A notebook for advanced mean-variance optimization.
+- **Black_Litterman_Model.ipynb**: A notebook implementing the Black-Litterman model.
+- **Hierarchical_Risk_Parity.ipynb**: A notebook for implementing the hierarchical risk parity approach.
+- **Risk_Return_Model.ipynb**: A notebook focusing on risk-return modeling.
+- **data/**: Contains `spy_prices.csv` with SPY price data for the optimization models.
 
-- `VEA` -> Developed Markets ex-US
-- `VWO` -> Emerging Markets
-- `EWJ` -> Japan
-- `TLT` -> 20+ Year Treasury Bonds
-- `LQD` -> Investment Grade Corporate Bonds
-- `GLD` -> Gold
-- `VNQ` -> REITs
-- `DBC` -> Commodities Index
+## Usage
 
----
+1. Navigate to the notebooks (for only MVP) directory to begin with the mean-variance portfolio optimization and backtesting.
+2. Explore the advanced optimization models in the notebooks (Upgrade for more optimizers) directory for more complex methods.
 
-## Key Steps
+## Notes
+- Each section includes its own data directory with CSV files tailored for the specific optimization method.
+- The repository includes no traditional configuration files like .gitignore, requirements.txt, or config.yaml, so make sure to manually manage dependencies if needed.
 
-1. **Data Acquisition**: Download daily closing prices from 2015-2025 using `yfinance`.
-2. **Data Cleaning and Preprocessing**: Handle missing values, calculate daily and monthly log returns.
-3. **Exploratory Data Analysis**: Plot -> Price Trends, Return Distributions, Correlation Heatmap.
-4. **Mean-Variance Optimization**: Formulate the objective, set the constraints, solve using cvxpy quadratic programming.
-5. **Efficient Frontier**: Calculate portfolios for varying target returns, visualize risk-return trade-offs.
-6. **Backtesting**: Optimized portfolio VS equal-weight portfolio VS SPY benchmark
-7. **Extensions**: Turnover constraints to limit drastic rebalancing.
-8. **Display results**: View Reports folder.
-
----
-
-## Future Extensions 
-
-- Black-Litterman model for incorporating market views
-- Transaction cost modeling
-- More asset datasets...
+## Contributions
+Feel free to fork the repository and contribute to improving the optimization models. Pull requests and suggestions are welcome.
